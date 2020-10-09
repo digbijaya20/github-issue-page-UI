@@ -36,11 +36,12 @@ const Issues = () => {
   return (
     <>
 
-      <Filters filters={["all","open","closed"]} selectedFilter="all"/>
-      
+      <Filters filters={["all", "open", "closed"]} selectedFilter="all" />
+
       {/*Props Passed to issuesList is the array of issues and filter selected*/}
-      <IssueList issues={issues} filter="all"/>
-      <Pagination/>
+      {issues.map(issue =><IssueList issues={issues} filter="all" key={issue.id} />)}
+      <Pagination />
+      {/*blogs.map(blog => <EachBlog key={blog.id} blog={blog}/>)*/}
     </>
   );
 };
